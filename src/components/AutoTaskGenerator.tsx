@@ -10,7 +10,7 @@ const getRandomPriority = (): "low" | "medium" | "high" => {
 
 const AutoTaskGenerator: React.FC = () => {
   const dispatch = useDispatch();
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     const scheduleNextTask = () => {
